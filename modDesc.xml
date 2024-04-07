@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="60">
+    <author>dkuij</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Landini Rex 4GT DK edit</en>
+    </title>
+    <description>
+        <en>My Mod Description</en>
+    </description>
+    <iconFilename>icon_seriesREX4.png</iconFilename>
+    <storeItems>
+        <storeItem xmlFilename="seriesREX4.xml"/>
+    </storeItems>
+</modDesc>
