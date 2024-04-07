@@ -19,7 +19,7 @@
             <storePack>STARTER_GRAPE</storePack>
             <storePack>STARTER_OLIVE</storePack>
         </storePacks>
-        <image>store_seriesREX4.dds</image>
+        <image>icons/store_seriesREX4.dds</image>
         <price>39500</price>
         <lifetime>600</lifetime>
         <rotation>0</rotation>
@@ -37,7 +37,7 @@
     
 	<base>
         <typeDesc>$l10n_typeDesc_tractor</typeDesc>
-        <filename>seriesREX4.i3d</filename>
+        <filename>i3d/seriesREX4.i3d</filename>
         <sounds filename="$data/vehicles/landini/seriesREX4/sounds/seriesREX4.xml"/>
         <size width="2.7" length="4.5" height="2.9" lengthOffset="0.05"/>
         <components>
@@ -51,6 +51,18 @@
     
 	<wheels>
         <wheelConfigurations>
+            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="MICHELIN" saveId="MICHELIN_DEFAULT">
+                <wheels baseConfig="TRELLEBORG_DEFAULT">
+                    <wheel filename="$data/shared/wheels/tires/michelin/multibib/320_65R18.xml"/>
+                    <wheel filename="$data/shared/wheels/tires/michelin/multibib/320_65R18.xml"/>
+                    <wheel filename="$data/shared/wheels/tires/michelin/multibib/440_65R28.xml">
+                        <physics yOffset="0.022"/>
+                    </wheel>
+                    <wheel filename="$data/shared/wheels/tires/michelin/multibib/440_65R28.xml">
+                        <physics yOffset="0.022"/>
+                    </wheel>
+                </wheels>
+            </wheelConfiguration>
             <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="TRELLEBORG" saveId="TRELLEBORG_DEFAULT">
                 <wheels autoRotateBackSpeed="2.3">
                     <wheel filename="$data/shared/wheels/tires/trelleborg/TM800/320_65R18.xml" isLeft="true" hasTireTracks="true" hasParticles="true">
@@ -65,18 +77,6 @@
                     </wheel>
                     <wheel filename="$data/shared/wheels/tires/trelleborg/TM700/480_70R24.xml" isLeft="false" hasTireTracks="true" hasParticles="true">
                         <physics rotSpeed="0" restLoad="0.6" repr="wheelBackRight" forcePointRatio="0.3" initialCompression="20" suspTravel="0.11" spring="21" damper="10" yOffset="0.03"/>
-                    </wheel>
-                </wheels>
-            </wheelConfiguration>
-            <wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="MICHELIN" saveId="MICHELIN_DEFAULT">
-                <wheels baseConfig="TRELLEBORG_DEFAULT">
-                    <wheel filename="$data/shared/wheels/tires/michelin/multibib/320_65R18.xml"/>
-                    <wheel filename="$data/shared/wheels/tires/michelin/multibib/320_65R18.xml"/>
-                    <wheel filename="$data/shared/wheels/tires/michelin/multibib/440_65R28.xml">
-                        <physics yOffset="0.022"/>
-                    </wheel>
-                    <wheel filename="$data/shared/wheels/tires/michelin/multibib/440_65R28.xml">
-                        <physics yOffset="0.022"/>
                     </wheel>
                 </wheels>
             </wheelConfiguration>
@@ -144,7 +144,7 @@
             <ackermannSteering rotSpeed="40" rotMax="30" rotCenterWheel1="3" rotCenterWheel2="4"/>
         </ackermannSteeringConfigurations>
         <hubs>
-            <color0>LANDINI_GREY1</color0>
+            <color0 useBaseColor="true"/>
             <color1>SHARED_GREY3</color1>
             <hub linkNode="wheelFrontLeft" filename="$data/shared/wheels/hubs/hub_n8_2.xml" isLeft="true" scale="0.18 0.18 0.18" offset="0.01"/>
             <hub linkNode="wheelFrontRight" filename="$data/shared/wheels/hubs/hub_n8_2.xml" isLeft="false" scale="0.18 0.18 0.18" offset="0.01"/>
@@ -163,37 +163,37 @@
         <sharedLight linkNode="redRectangle_01_02" filename="$data/shared/assets/reflectors/lizard/redRectangle_01.xml"/>
         <realLights>
             <low>
-                <light node="frontLightLow" lightTypes="0" excludedLightTypes="2 3"/>
-                <light node="workLightBackLow" lightTypes="1"/>
-                <light node="workLightFrontLow" lightTypes="2"/>
-                <light node="highBeamLow" lightTypes="3"/>
+                <light node="frontLightLow" 		lightTypes="0"	excludedLightTypes="2 3"/>
+                <light node="workLightBackLow" 		lightTypes="1"/>
+                <light node="workLightFrontLow"		lightTypes="2"/>
+                <light node="highBeamLow" 			lightTypes="3"/>
             </low>
             <high>
-                <light node="frontLightHigh" lightTypes="0" excludedLightTypes="2 3"/>
-                <light node="backLightsHigh" lightTypes="0"/>
-                <light node="licensePlateLightHigh" lightTypes="0"/>
-                <light node="workLightBackHigh" lightTypes="1"/>
-                <light node="workLightFrontHigh" lightTypes="2"/>
-                <light node="highBeamHigh" lightTypes="3"/>
-                <brakeLight node="backLightsHigh"/>
-                <turnLightLeft node="turnLightLeftFront"/>
-                <turnLightRight node="turnLightRightFront"/>
-                <interiorLight node="interiorScreenLight"/>
+                <light 			node="frontLightHigh" 			lightTypes="0" excludedLightTypes="2 3"/>
+                <light 			node="backLightsHigh" 			lightTypes="0"/>
+                <light 			node="licensePlateLightHigh"	lightTypes="0"/>
+                <light 			node="workLightBackHigh" 		lightTypes="1"/>
+                <light 			node="workLightFrontHigh" 		lightTypes="2"/>
+                <light 			node="highBeamHigh" 			lightTypes="3"/>
+                <brakeLight 	node="backLightsHigh"/>
+                <turnLightLeft 	node="turnLightLeftFront"/>
+                <turnLightRight	node="turnLightRightFront"/>
+                <interiorLight 	node="interiorScreenLight"/>
             </high>
         </realLights>
         <defaultLights>
-            <defaultLight shaderNode="frontLightGlass_static" lightTypes="0 3"/>
-            <defaultLight shaderNode="defaultLightGlass_static" lightTypes="0"/>
-            <defaultLight shaderNode="backlightGlass_static" lightTypes="0"/>
-            <defaultLight shaderNode="worklightFrontGlass_static" lightTypes="2" intensity="50"/>
-            <defaultLight shaderNode="worklightBackGlass_static" lightTypes="1" intensity="50"/>
+            <defaultLight shaderNode="frontLightGlass_static" 		lightTypes="0 3"/>
+            <defaultLight shaderNode="defaultLightGlass_static" 	lightTypes="0"/>
+            <defaultLight shaderNode="backlightGlass_static" 		lightTypes="0"/>
+            <defaultLight shaderNode="worklightFrontGlass_static"	lightTypes="2" intensity="50"/>
+            <defaultLight shaderNode="worklightBackGlass_static" 	lightTypes="1" intensity="50"/>
         </defaultLights>
         <brakeLights>
             <brakeLight shaderNode="backlightGlass_static"/>
         </brakeLights>
         <turnLights>
-            <turnLightLeft shaderNode="turnlightLeftGlass_static"/>
-            <turnLightRight shaderNode="turnlightRightGlass_static"/>
+            <turnLightLeft 	shaderNode="turnlightLeftGlass_static"/>
+            <turnLightRight	shaderNode="turnlightRightGlass_static"/>
         </turnLights>
         <beaconLights>
             <beaconLight node="beaconLight07" filename="$data/shared/assets/beaconLights/lizard/beaconLight07.xml"/>
@@ -635,11 +635,20 @@
     
 	<baseMaterialConfigurations price="0" useDefaultColors="true" defaultColorIndex="0">
         <material name="rex4_mat" shaderParameter="colorMat0"/>
-        <baseMaterialConfiguration name="$l10n_ui_colorBlue" color="LANDINI_BLUE1" material="0" price="0"/>
-        <baseMaterialConfiguration name="$l10n_ui_colorMetallicX" color="LANDINI_BLUE1" material="3" price="1500" params="$l10n_ui_colorBlue"/>
+		
+		<baseMaterialConfiguration name="DennisK Dark Blue" 		color="0.005 0.001 0.533"/>
+		<baseMaterialConfiguration name="DennisK Light Blue" 		color="0.000 0.776 1.000"/>
+		<baseMaterialConfiguration name="DennisK Black" 			color="0 0 0"/>
+		<baseMaterialConfiguration name="Black Matt" 				color="0.015 0.015 0.015" material="23"/>
+        <baseMaterialConfiguration name="$l10n_ui_colorBlue" 		color="LANDINI_BLUE1" material="0" price="0"/>
+        <baseMaterialConfiguration name="$l10n_ui_colorMetallicX"	color="LANDINI_BLUE1" material="3" price="1500" params="$l10n_ui_colorBlue"/>
     </baseMaterialConfigurations>
     
 	<rimColorConfigurations useDefaultColors="true">
+		<rimColorConfiguration name="DennisK Black" 			color="0 0 0"/>
+		<rimColorConfiguration name="DennisK Dark Blue" 		color="0.005 0.001 0.533"/>
+		<rimColorConfiguration name="DennisK Light Blue" 		color="0.000 0.776 1.000"/>
+		<rimColorConfiguration name="Black Matt" 				color="0.015 0.015 0.015" material="23"/>
         <rimColorConfiguration name="$l10n_ui_colorGrey" color="SHARED_WHITE1" material="18" price="0"/>
         <rimColorConfiguration name="$l10n_ui_colorBlack" color="LANDINI_GREY1" material="0" price="300"/>
     </rimColorConfigurations>
